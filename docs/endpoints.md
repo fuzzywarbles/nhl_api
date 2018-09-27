@@ -1,115 +1,117 @@
-# BoxScoreAdvancedV2
+# Teams
 
 ##### Endpoint URL
->[https://stats.nba.com/stats/boxscoreadvancedv2](https://stats.nba.com/stats/boxscoreadvancedv2)
+>[https://statsapi.web.nhl.com/api/v1/teams](https://statsapi.web.nhl.com/api/v1/teams)
 
 ##### Valid URL
->[https://stats.nba.com/stats/boxscoreadvancedv2?EndPeriod=1&EndRange=0&GameID=0021700807&RangeType=0&StartPeriod=1&StartRange=0](https://stats.nba.com/stats/boxscoreadvancedv2?EndPeriod=1&EndRange=0&GameID=0021700807&RangeType=0&StartPeriod=1&StartRange=0)
+>[https://statsapi.web.nhl.com/api/v1/teams](https://statsapi.web.nhl.com/api/v1/teams)
 
-## Parameters
-Parameter Name | Pattern | Required | Nullable
------------- | :-----------: | :---: | :---:
-_**EndPeriod**_ |  | `Y` |  | 
-_**EndRange**_ |  | `Y` |  | 
-_**GameID**_ | `^\d{10}$` | `Y` |  | 
-_**RangeType**_ |  | `Y` |  | 
-_**StartPeriod**_ |  | `Y` |  | 
-_**StartRange**_ |  | `Y` |  | 
+## Modifiers
+`?expand=team.roster` Shows roster of active players for the specified team 
+
+`?expand=person.names` Same as above, but gives less info.
+
+`?expand=team.schedule.next` Returns details of the upcoming game for a team
+
+`?expand=team.schedule.previous` Same as above but for the last game played
+
+`?expand=team.stats` Returns the teams stats for the season
+
+`?expand=team.roster&season=20142015` Adding the season identifier shows the roster for that season
+
+`?teamId=4,5,29` Can string team id together to get multiple teams
+
+`?stats=statsSingleSeasonPlayoffs` Speciy which stats to get. Not fully sure all of the values
 
 ## Data Sets
-#### PlayerStats `player_stats`
+#### Teams `teams`
 ```text
-['GAME_ID', 'TEAM_ID', 'TEAM_ABBREVIATION', 'TEAM_CITY', 'PLAYER_ID', 'PLAYER_NAME', 'START_POSITION', 'COMMENT', 'MIN', 'OFF_RATING', 'DEF_RATING', 'NET_RATING', 'AST_PCT', 'AST_TOV', 'AST_RATIO', 'OREB_PCT', 'DREB_PCT', 'REB_PCT', 'TM_TOV_PCT', 'EFG_PCT', 'TS_PCT', 'USG_PCT', 'PACE', 'PIE']
+["id", "name", "link", "venue_id", "venue_name", "venue_link", "venue_city", "timeZone_id", "timeZone_offset", "timeZone_tz", "abbreviation", "teamName", "locationName", "firstYearOfPlay" , "division_id", "division_name", "division_nameShort", "division_link", "division_abbreviation", "conference_id", "conference_name", "conference_link", "franchise_id", "franchise_teamName", "franchise_link", "shortName", "officialSiteUrl", "franchiseId", "active"]
 ```
 
-#### TeamStats `team_stats`
-```text
-['GAME_ID', 'TEAM_ID', 'TEAM_NAME', 'TEAM_ABBREVIATION', 'TEAM_CITY', 'MIN', 'OFF_RATING', 'DEF_RATING', 'NET_RATING', 'AST_PCT', 'AST_TOV', 'AST_RATIO', 'OREB_PCT', 'DREB_PCT', 'REB_PCT', 'TM_TOV_PCT', 'EFG_PCT', 'TS_PCT', 'USG_PCT', 'PACE', 'PIE']
-```
-
-
-## JSON
+## RETURNED JSON
 ```json
 {
-    "data_sets": {
-        "PlayerStats": [
-            "GAME_ID",
-            "TEAM_ID",
-            "TEAM_ABBREVIATION",
-            "TEAM_CITY",
-            "PLAYER_ID",
-            "PLAYER_NAME",
-            "START_POSITION",
-            "COMMENT",
-            "MIN",
-            "OFF_RATING",
-            "DEF_RATING",
-            "NET_RATING",
-            "AST_PCT",
-            "AST_TOV",
-            "AST_RATIO",
-            "OREB_PCT",
-            "DREB_PCT",
-            "REB_PCT",
-            "TM_TOV_PCT",
-            "EFG_PCT",
-            "TS_PCT",
-            "USG_PCT",
-            "PACE",
-            "PIE"
-        ],
-        "TeamStats": [
-            "GAME_ID",
-            "TEAM_ID",
-            "TEAM_NAME",
-            "TEAM_ABBREVIATION",
-            "TEAM_CITY",
-            "MIN",
-            "OFF_RATING",
-            "DEF_RATING",
-            "NET_RATING",
-            "AST_PCT",
-            "AST_TOV",
-            "AST_RATIO",
-            "OREB_PCT",
-            "DREB_PCT",
-            "REB_PCT",
-            "TM_TOV_PCT",
-            "EFG_PCT",
-            "TS_PCT",
-            "USG_PCT",
-            "PACE",
-            "PIE"
-        ]
-    },
-    "endpoint": "BoxScoreAdvancedV2",
-    "nullable_parameters": [],
-    "parameter_patterns": {
-        "EndPeriod": null,
-        "EndRange": null,
-        "GameID": "^\\d{10}$",
-        "RangeType": null,
-        "StartPeriod": null,
-        "StartRange": null
-    },
-    "parameters": [
-        "EndPeriod",
-        "EndRange",
-        "GameID",
-        "RangeType",
-        "StartPeriod",
-        "StartRange"
-    ],
-    "required_parameters": [
-        "EndPeriod",
-        "EndRange",
-        "GameID",
-        "RangeType",
-        "StartPeriod",
-        "StartRange"
-    ],
-    "status": "success"
+    "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
+    "teams" : [ {
+        "id" : 1,
+        "name" : "New Jersey Devils",
+        "link" : "/api/v1/teams/1",
+        "venue" : {
+            "id" : 5067,
+            "name" : "Prudential Center",
+            "link" : "/api/v1/venues/5067",
+            "city" : "Newark",
+            "timeZone" : {
+                "id" : "America/New_York",
+                "offset" : -4,
+                "tz" : "EDT"
+            }
+        },
+        "abbreviation" : "NJD",
+        "teamName" : "Devils",
+        "locationName" : "New Jersey",
+        "firstYearOfPlay" : "1982",
+        "division" : {
+            "id" : 18,
+            "name" : "Metropolitan",
+            "nameShort" : "Metro",
+            "link" : "/api/v1/divisions/18",
+            "abbreviation" : "M"
+        },
+        "conference" : {
+            "id" : 6,
+            "name" : "Eastern",
+            "link" : "/api/v1/conferences/6"
+        },
+        "franchise" : {
+            "franchiseId" : 23,
+            "teamName" : "Devils",
+            "link" : "/api/v1/franchises/23"
+        },
+        "shortName" : "New Jersey",
+        "officialSiteUrl" : "http://www.newjerseydevils.com",
+        "franchiseId" : 23,
+        "active" : true
+    } ]
 }
 ```
 
-Last validated 2018-09-16
+## MODIFIED JSON
+```json
+{   
+    "data_sets": {
+        "teams" : [ {
+            "id",
+            "name",
+            "link",
+            "venue_id",
+            "venue_name",
+            "venue_link",
+            "venue_city",
+            "timeZone_id",
+            "timeZone_offset",
+            "timeZone_tz",
+            "abbreviation",
+            "teamName",
+            "locationName",
+            "firstYearOfPlay" ,
+            "division_id",
+            "division_name",
+            "division_nameShort",
+            "division_link",
+            "division_abbreviation",
+            "conference_id",
+            "conference_name",
+            "conference_link",
+            "franchise_id",
+            "franchise_teamName",
+            "franchise_link",
+            "shortName",
+            "officialSiteUrl",
+            "franchiseId",
+            "active"
+        } ]
+    }
+}
+```
