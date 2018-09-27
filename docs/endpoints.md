@@ -81,7 +81,7 @@
 ```json
 {   
     "data_sets": {
-        "teams" : [ {
+        "teams" : [
             "id",
             "name",
             "link",
@@ -111,7 +111,7 @@
             "officialSiteUrl",
             "franchiseId",
             "active"
-        } ]
+        ]
     }
 }
 ```
