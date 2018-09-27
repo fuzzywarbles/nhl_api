@@ -2,10 +2,12 @@
 
 ##### Endpoint URL
 >[https://statsapi.web.nhl.com/api/v1/teams](https://statsapi.web.nhl.com/api/v1/teams)
+<br/><br/>
 >[https://statsapi.web.nhl.com/api/v1/teams/ID](https://statsapi.web.nhl.com/api/v1/teams/ID)
 
 ##### Valid URL
 >[https://statsapi.web.nhl.com/api/v1/teams](https://statsapi.web.nhl.com/api/v1/teams)
+<br/><br/>
 >[https://statsapi.web.nhl.com/api/v1/teams/1](https://statsapi.web.nhl.com/api/v1/teams/1)
 
 ## Modifiers
