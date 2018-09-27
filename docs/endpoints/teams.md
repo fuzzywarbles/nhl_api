@@ -6,7 +6,7 @@
 >[https://statsapi.web.nhl.com/api/v1/teams/ID](https://statsapi.web.nhl.com/api/v1/teams/ID)
 
 ##### Valid URL
->[https://statsapi.web.nhl.com/api/v1/teams](https://statsapi.web.nhl.com/api/v1/teams)
+>[https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster&expand=person.names&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats](https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster&expand=person.names&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats)
 <br/><br/>
 >[https://statsapi.web.nhl.com/api/v1/teams/1](https://statsapi.web.nhl.com/api/v1/teams/1)
 
