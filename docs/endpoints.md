@@ -9,7 +9,8 @@
 >[https://statsapi.web.nhl.com/api/v1/teams/1](https://statsapi.web.nhl.com/api/v1/teams/1)
 
 ## Modifiers
-`?expand=team.roster` Shows roster of active players for the specified team 
+`?expand=team.roster` 
+##### Shows roster of active players for the specified team 
 
 `?expand=person.names` Same as above, but gives less info.
 
