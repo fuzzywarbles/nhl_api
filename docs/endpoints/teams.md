@@ -6,9 +6,9 @@
 >[https://statsapi.web.nhl.com/api/v1/teams/ID](https://statsapi.web.nhl.com/api/v1/teams/ID)
 
 ##### Valid URL
->[https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats](https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats)
+>[https://statsapi.web.nhl.com/api/v1/teams](https://statsapi.web.nhl.com/api/v1/teams)
 <br/><br/>
->[https://statsapi.web.nhl.com/api/v1/teams/1?expand=team.roster&expand=person.names&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats](https://statsapi.web.nhl.com/api/v1/teams/1?expand=team.roster&expand=person.names&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats)
+>[https://statsapi.web.nhl.com/api/v1/teams/1](https://statsapi.web.nhl.com/api/v1/teams/1)
 
 ## Modifiers
 `?expand=team.roster` - Shows roster of active players for the specified team 
@@ -24,6 +24,11 @@
 `?teamId=4,5,29` - Can string team id together to get multiple teams
 
 `?stats=statsSingleSeasonPlayoffs` - Speciy which stats to get. Not fully sure all of the values
+
+##### Valid URL w/ modifiers
+>[https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats](https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats)
+<br/><br/>
+>[https://statsapi.web.nhl.com/api/v1/teams/1?expand=team.roster&expand=person.names&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats](https://statsapi.web.nhl.com/api/v1/teams/1?expand=team.roster&expand=person.names&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats)
 
 ## Data Sets
 #### Teams `teams`
