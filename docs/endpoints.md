@@ -2,9 +2,11 @@
 
 ##### Endpoint URL
 >[https://statsapi.web.nhl.com/api/v1/teams](https://statsapi.web.nhl.com/api/v1/teams)
+>[https://statsapi.web.nhl.com/api/v1/teams/ID](https://statsapi.web.nhl.com/api/v1/teams/ID)
 
 ##### Valid URL
 >[https://statsapi.web.nhl.com/api/v1/teams](https://statsapi.web.nhl.com/api/v1/teams)
+>[https://statsapi.web.nhl.com/api/v1/teams/1](https://statsapi.web.nhl.com/api/v1/teams/1)
 
 ## Modifiers
 `?expand=team.roster` Shows roster of active players for the specified team 
