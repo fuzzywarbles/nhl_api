@@ -19,12 +19,6 @@
 
 `?expand=team.stats` - Returns the teams stats for the season
 
-`?expand=team.roster&season=20142015` - Adding the season identifier shows the roster for that season
-
-`?teamId=4,5,29` - Can string team id together to get multiple teams
-
-`?stats=statsSingleSeasonPlayoffs` - Speciy which stats to get. Not fully sure all of the values
-
 ##### Valid URL w/ modifiers
 >[https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats](https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats)
 <br/><br/>
