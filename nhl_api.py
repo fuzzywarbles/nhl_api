@@ -9,18 +9,55 @@ HEADER = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) \
             Chrome/39.0.2171.95 Safari/537.36'}
 
 
-class WebScrape(object):
+class WebScrape:
 
     def __init__(self):
-        self.url = f"https://statsapi.web.nhl.com/api/v1/"
+        self.url = "https://statsapi.web.nhl.com/api/v1/"
 
-    def get_team_data(self):
-        response = requests.get(f"{self.url}teams", verify=False, headers=HEADER)
+    def get_data(self, target):
+        response = requests.get(f"{self.url}{target}", verify=False, headers=HEADER)
         if response.status_code == 200:
             return response.json()
         else:
             return "ERROR: %s" % response.text
 
+
+class Team:
+
+    def __init__(self, team):
+        #teams = WebScrape().get_data(tag)
+        #a_list = [row for row in teams[tag]]
+        #teams_list = [dict(unpack(item)) for item in a_list]
+        #for team in teams_list:
+        for k, v in team.items():
+                print(object)
+                setattr(self, k, v)
+
+    def populate_team_data(self):
+        teams = WebScrape().get_data("teams")
+        a_list = [row for row in teams["teams"]]
+        teams_list = [dict(unpack(item)) for item in a_list]
+        master_list = []
+        print(teams_list)
+        for team in teams_list:
+            print(team)
+            master_list.append(Team(team))
+        return master_list
+
+
+class Player:
+    pass
+
+'''
+def populate_team_data(tag):
+    nhl = WebScrape()
+    team = nhl.get_data(tag)
+    raw_list = [row for row in team[tag]]
+    team_list = [dict(unpack(item)) for item in raw_list]
+    for team in team_list:
+        print(team)
+        Team(team)
+'''
 
 def create_dataframe(response, tag):
     """
@@ -48,7 +85,7 @@ def unpack(data, *parent):
 
     Parameters:
         data (dict): Individual dict entries from raw_list.  Some have nested dicts as children.
-        *parent (str): Passed back via yield from to see if item was nested.  If so, append the parent key name to 
+        *parent (str): Passed back via yield from to see if item was nested.  If so, append the parent key name to
                        the child key to avoid duplicate key names.
 
     Yields:
@@ -65,9 +102,12 @@ def unpack(data, *parent):
 
 
 def main():
-    nhl = WebScrape()
-    team_df = create_dataframe(nhl.get_team_data(), "teams")
-    print(team_df)
+    #teams = Team("teams")
+    #for a in teams:
+    #    print(a.name, a.id, a.abbreviation)
+
+    a = Team.populate_team_data("teams")
+    print(a['name'])
 
 
 if __name__ == '__main__':
