@@ -1,4 +1,4 @@
-
+#### FORWARD/DEFENSE
 | Attribute                      | Type      | Example                   | Endpoint                                         |
 |:-------------------------------|:----------|:--------------------------|:-------------------------------------------------|
 | person_fullName                | string    | Drew Stafford             | teams roster roster person fullName              |
@@ -37,3 +37,38 @@
 | shots                          | int       | 3                         | stats splits stat shots                          |
 | timeOnIce                      | string    | "17:22"                   | stats splits stat timeOnIce                      |
 | timeOnIcePerGame               | string    | "17:22"                   | stats splits stat timeOnIcePerGame               |
+
+#### GOALIE
+| Attribute                     | Type      | Example                   | Endpoint                                         |
+|:------------------------------|:----------|:--------------------------|:-------------------------------------------------|
+| person_fullName               | string    | Keith Kinkaid             | teams roster roster person fullName              |
+| person_id                     | int       | 8476234                   | teams roster roster person id                    |
+| person_link                   | string    | /api/v1/people/8476234    | teams roster roster person link                  |
+| jerseyNumber                  | int       | 1                         | teams roster roster jerseyNumber                 |
+| position_code                 | string    | G                         | teams roster roster position code                |
+| position_name                 | string    | Goalie                    | teams roster roster position name                |
+| position_type                 | string    | Goalie                    | teams roster roster position type                |
+| position_abbreviation         | string    | G                         | teams roster roster position abbreviation        |
+| name                          | string    | New Jersey Devils         | teams name                                       |
+| evenSaves                     | int       | 10                        | stats splits stat evenSaves                      |
+| evenShots                     | int       | 10                        | stats splits stat evenShots                      |
+| evenStrengthSavePercentage    | float     | 100.0                     | stats splits stat evenStrengthSavePercentage     |
+| games                         | int       | 1                         | stats splits stat games                          |
+| gamesStarted                  | int       | 1                         | stats splits stat gamesStarted                   |
+| goalAgainstAverage            | float     | 0.0                       | stats splits stat goalAgainstAverage             |
+| goalsAgainst                  | int       | 0                         | stats splits stat goalsAgainst                   |
+| losses                        | int       | 0                         | stats splits stat losses                         |
+| ot                            | int       | 0                         | stats splits stat ot                             |
+| powerPlaySavePercentage       | float     | 100.0                     | stats splits stat powerPlaySavePercentage        |
+| powerPlaySaves                | int       | 1                         | stats splits stat powerPlaySaves                 |
+| powerPlayShots                | int       | 0                         | stats splits stat powerPlayShots                 |
+| savePercentage                | float     | 1.0                       | stats splits stat savePercentage                 |
+| saves                         | int       | 2                         | stats splits stat saves                          |
+| shortHandedSaves              | int       | 0                         | stats splits stat shortHandedSaves               |
+| shortHandedShots              | int       | 0                         | stats splits stat shortHandedShots               |
+| shotsAgainst                  | int       | 13                        | stats splits stat shotsAgainst                   |
+| shutouts                      | int       | 0                         | stats splits stat shutouts                       |
+| ties                          | int       | 23                        | stats splits stat ties                           |
+| timeOnIce                     | float     | "32:21"                   | stats splits stat timeOnIce                      |
+| timeOnIcePerGame              | float     | "32:21"                   | stats splits stat timeOnIcePerGame               |
+| wins                          | int       | 0                         | stats splits stat wins                           |
